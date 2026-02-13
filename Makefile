@@ -4,3 +4,5 @@ download-data:
 	"C:\Users\Usama\AppData\Local\Programs\Python\Python313\python.exe" scripts/download_data.py
 preprocess:
 	"C:\Users\Usama\AppData\Local\Programs\Python\Python313\python.exe" scripts/preprocess.py
+features:
+	"C:\Users\Usama\AppData\Local\Programs\Python\Python313\python.exe" scripts/feature_engineering.py
