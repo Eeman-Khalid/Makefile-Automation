@@ -8,3 +8,5 @@ feature:
 	"C:\Users\Usama\AppData\Local\Programs\Python\Python313\python.exe" scripts/feature_engineering.py
 train:
 	"C:\Users\Usama\AppData\Local\Programs\Python\Python313\python.exe" scripts/train_model.py
+predict:
+	"C:\Users\Usama\AppData\Local\Programs\Python\Python313\python.exe" scripts/predict.py
