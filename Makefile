@@ -1,14 +1,23 @@
 setup:
-	py -m pip install -r requirements.txt"C:\Users\Usama\AppData\Local\Programs\Python\Python313\python.exe" -m pip install --upgrade pip./make.exe setup
+	py -3.13 -m pip install --upgrade pip
+	py -3.13 -m pip install -r requirements.txt
+
 download-data:
-	"C:\Users\Usama\AppData\Local\Programs\Python\Python313\python.exe" scripts/download_data.py
-preprocess: 
-	"C:\Users\Usama\AppData\Local\Programs\Python\Python313\python.exe" scripts/preprocess.py
-feature:
-	"C:\Users\Usama\AppData\Local\Programs\Python\Python313\python.exe" scripts/feature_engineering.py
-train:
-	"C:\Users\Usama\AppData\Local\Programs\Python\Python313\python.exe" scripts/train_model.py
-predict:
-	"C:\Users\Usama\AppData\Local\Programs\Python\Python313\python.exe" scripts/predict.py
-evaluate:
-	"C:\Users\Usama\AppData\Local\Programs\Python\Python313\python.exe" scripts/evaluate.py
+	py -3.13 scripts/download_data.py
+
+preprocess: download-data
+	py -3.13 scripts/preprocess.py
+
+features: preprocess
+	py -3.13 scripts/feature_engineering.py
+
+train: features
+	py -3.13 scripts/train_model.py
+
+predict: train
+	py -3.13 scripts/predict.py
+
+evaluate: predict
+	py -3.13 scripts/evaluate.py
+
+all: setup train evaluate
